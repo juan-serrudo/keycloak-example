@@ -1,1 +1,12 @@
+# Variables locales y secretos
 .env
+.env.local
+.env.*.local
+
+# Las plantillas sí deben versionarse
+!.env.example
+
+# Los respaldos pueden contener identidades, configuración o credenciales.
+# Se conserva únicamente su documentación.
+backups/*
+!backups/README.md
