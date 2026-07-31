@@ -7,18 +7,31 @@ Gestión de la UOIT.
 
 Actualmente están disponibles:
 
-- Keycloak 26.x.
+- Keycloak 26.7.0.
 - PostgreSQL como almacenamiento persistente de Keycloak.
 - React, TypeScript y Vite.
-- La dependencia `keycloak-js`, todavía sin integrar.
+- Integración del frontend mediante `keycloak-js`.
 - El realm `uoit`, almacenado en la base de datos local.
+- El cliente público `sig-uoit-frontend`.
+- Authorization Code Flow con PKCE S256 obligatorio.
+- Renovación del access token, lectura de claims y cierre de sesión.
 
 Todavía no están implementados:
 
-- El cliente público `sig-uoit-frontend`.
 - Los clientes `sig-uoit-api` y `sig-uoit-agent`.
-- La inicialización OIDC del frontend.
 - FastAPI y su base de datos funcional.
+- La autorización funcional mediante roles.
+- Una exportación saneada del realm dentro de `realm-import/`.
+
+La integración compila y pasa ESLint. La prueba interactiva de login, renovación
+y logout debe completarse desde el navegador.
+
+## Manual del laboratorio
+
+El procedimiento completo, las explicaciones y la guía para continuar en otra
+computadora están en:
+
+- [Manual del laboratorio hasta la integración del frontend](docs/MANUAL-KEYCLOAK-UOIT.md)
 
 ## Arquitectura prevista
 
@@ -140,5 +153,5 @@ No debe ejecutarse sin un respaldo verificado.
 
 ## Próxima fase
 
-Crear y verificar el cliente público `sig-uoit-frontend` dentro del realm
-`uoit`, antes de modificar el código React.
+Completar la prueba interactiva de login, renovación y logout. Después se
+podrán crear roles de laboratorio y comprobar su aparición en los claims.
